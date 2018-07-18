@@ -3,26 +3,22 @@ class DriversProblem::CLI
 
   def call
     puts "Please feed me your data..."
-    @data = gets
-    binding.pry
-    # @data = gets.split("\n")
+    @data = gets.split("\n").map {|line| line.split(" ")}
     making_objects
     final_output
   end
 
   def making_objects
-    binding.pry
     @data.each do |info|
-      if info.split(" ").length > 2
+      # if info.length > 2
         @resource = DriversProblem::Trips.new(info)
-      else
-        @resource = DriversProblem::Drivers.new(info)
-      end
+      # else
+      #   @resource = DriversProblem::Drivers.new(info)
+      # end
     end
   end
 
   def final_output
-    # binding.pry
     DriversProblem::Drivers.all.each do |driver|
       driver.trip_output
     end
