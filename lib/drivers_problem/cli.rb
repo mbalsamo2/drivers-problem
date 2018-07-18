@@ -1,23 +1,31 @@
 class DriversProblem::CLI
+  attr_accessor :data
 
   def call
     puts "Please feed me your data..."
-    data = gets.split("\n")
+    @data = gets
+    binding.pry
+    # @data = gets.split("\n")
+    making_objects
+    final_output
+  end
 
-    data.each do |info|
+  def making_objects
+    binding.pry
+    @data.each do |info|
       if info.split(" ").length > 2
         @resource = DriversProblem::Trips.new(info)
-        puts "#{@resource.driver}"
-
       else
         @resource = DriversProblem::Drivers.new(info)
-        puts "#{@resource.name}"
       end
     end
+  end
 
-    # some kind of check driver only vs full string
-
-
+  def final_output
+    # binding.pry
+    DriversProblem::Drivers.all.each do |driver|
+      driver.trip_output
+    end
   end
 
 end

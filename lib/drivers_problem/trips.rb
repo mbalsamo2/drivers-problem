@@ -1,10 +1,13 @@
 class DriversProblem::Trips
   attr_accessor :driver
-  attr_reader :start_time, :end_time, :miles_driven, :trip_time, :trip_speed
+  attr_reader :start_time, :end_time, :miles_driven, :trip_time, :trip_speed, :trip_output
+
+  @@all = []
 
   def initialize(arg)
     data = arg.split(" ")
-    @driver = Driver.new(data[0])
+    @driver = DriversProblem::Drivers.new(data[1])
+    @@all << self
   end
 
   def start_time(data)
@@ -28,6 +31,16 @@ class DriversProblem::Trips
   def trip_speed
     @trip_speed = ((@miles_driven/@trip_time)*60).round
   end
+
+  def self.all
+    @@all
+  end
+
+  # def trip_output
+  #   if
+  #     @trip_output = "#{self.driver.name}: #{@miles_driven} miles @ #{@trip_speed} mph"
+  #   end
+  # end
 end
 
 # "Dan 07:15 07:45 17.3"
