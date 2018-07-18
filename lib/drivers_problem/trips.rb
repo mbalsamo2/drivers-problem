@@ -5,7 +5,6 @@ class DriversProblem::Trips
   def initialize(arg)
     data = arg.split(" ")
     @driver = Driver.new(data[0])
-    
   end
 
   def start_time(data)

@@ -1,23 +1,23 @@
 class DriversProblem::CLI
 
-  def some_method
+  def call
     puts "Please feed me your data..."
     data = gets.split("\n")
 
     data.each do |info|
       if info.split(" ").length > 2
-        resource = DriversProblem::Trip.new()
+        @resource = DriversProblem::Trips.new(info)
+        puts "#{@resource.driver}"
+
       else
-        resource = DriversProblem::Driver.new()
+        @resource = DriversProblem::Drivers.new(info)
+        puts "#{@resource.name}"
       end
     end
+
     # some kind of check driver only vs full string
-    if data.length > 1
-      resource = DriversProblem::Trip.new()
-    else
-      resource =
-    end
-    puts "#{resource.driver}"
+
+
   end
 
 end
