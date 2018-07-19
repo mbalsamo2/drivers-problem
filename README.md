@@ -1,10 +1,10 @@
 # drivers-problem
 Root Insurance technical coding assessment
 
-Installation:
+# Installation
 
 $ bundle install
 
-Usage
+# Usage
 
 To run type in terminal: ./bin/drivers_problem
