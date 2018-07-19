@@ -32,7 +32,7 @@ class DriversProblem::Drivers
     DriversProblem::Trips.all.each do |trip|
       # binding.pry
       if trip.start_time
-        puts "#{self.name}: #{trip.miles_driven} miles @ #{trip.trip_speed} mph"
+        puts "#{self.name}: #{trip.miles_driven.to_i} miles @ #{trip.trip_speed} mph"
       else
         puts "#{self.name}: 0 miles"
       end

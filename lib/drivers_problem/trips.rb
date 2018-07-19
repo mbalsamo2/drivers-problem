@@ -6,14 +6,13 @@ class DriversProblem::Trips
 
   def initialize(arg)
     @driver = DriversProblem::Drivers.new(arg)
-    arg[2] ? @start_time = self.start_time=(arg[2]) : @start_time = nil
-    arg[3] ? @end_time = self.end_time=(arg[3]) : @end_time = nil
-    arg[4] ? @miles_driven = self.miles_driven(arg[4]) : @miles_driven = nil
+    arg[2] ? self.start_time=(arg[2]) : @start_time = nil
+    arg[3] ? self.end_time=(arg[3]) : @end_time = nil
+    arg[4] ? self.miles_driven=(arg[4]) : @miles_driven = nil
     @@all << self
   end
 
   def start_time=(data)
-    # binding.pry
     starting = DateTime.parse(data)
     @start_time = starting.hour*60 + starting.min
   end
@@ -21,18 +20,20 @@ class DriversProblem::Trips
   def end_time=(data)
     ending = DateTime.parse(data)
     @end_time = ending.hour*60 + ending.min
+    # binding.pry
   end
 
   def miles_driven=(data)
-    @miles_driven = data[3].to_f
+    @miles_driven = data.to_f
   end
 
   def trip_time
-    @trip_time = @end_time - @start_time
+    @end_time - @start_time
   end
 
   def trip_speed
-    @trip_speed = ((@miles_driven/@trip_time)*60).round
+    # binding.pry
+    @trip_speed = ((@miles_driven/self.trip_time)*60).round
   end
 
   def self.all
