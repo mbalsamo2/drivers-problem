@@ -19,7 +19,12 @@ class DriversProblem::CLI
     @data.each do |info|
         puts info
         puts "--------------------"
-        @resource = DriversProblem::Trips.new(info)
+        if info.length > 2
+          DriversProblem::Trips.new(info)
+        else
+          DriversProblem::Drivers.new(info[1])
+        end
+        # @resource = DriversProblem::Trips.new(info)
     end
   end
 
@@ -27,6 +32,7 @@ class DriversProblem::CLI
     DriversProblem::Drivers.all.each do |driver|
       driver.trip_output
     end
+    # DriversProblem::Drivers.trip_output
   end
 
 end
