@@ -15,10 +15,8 @@ class DriversProblem::Drivers
   end
 
   def trip_output
-    if self.trip
-      if self.trip.trip_speed > 5 && self.trip.trip_speed < 100
-        puts "#{self.name}: #{self.trip_distance.to_i} miles @ #{self.average_speed} mph"
-      end
+    if self.trip_distance != 0 && self.total_time != 0
+      puts "#{self.name}: #{self.trip_distance.to_i} miles @ #{self.average_speed} mph"
     else
       puts "#{self.name}: 0 miles"
     end
