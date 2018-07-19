@@ -8,15 +8,6 @@ class DriversProblem::CLI
     final_output
   end
 
-  # def making_objects
-  #   @data.each do |info|
-  #     if info.length > 2
-  #       DriversProblem::Trips.new(info)
-  #     else
-  #       DriversProblem::Drivers.new(info[1])
-  #     end
-  #   end
-  # end
   def making_objects
     @data.each do |info|
       case info[0]
