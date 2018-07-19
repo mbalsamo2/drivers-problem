@@ -14,7 +14,7 @@ class DriversProblem::Trips
     @@all << self
     @driver.trip = self
     @driver.trip_distance += @miles_driven if @miles_driven
-    @driver.average_speed += @elapsed_time
+    @driver.total_time += @elapsed_time
   end
 
   def calculate_time(start_time, end_time)
