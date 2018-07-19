@@ -19,6 +19,9 @@ class DriversProblem::Drivers
     else
       puts "#{self.name}: 0 miles"
     end
+
+    # @sorted_data.delete_if {|driver| driver.trip.trip_speed < 5 || driver.trip.trip_speed > 100 }
+
   end
 
 end

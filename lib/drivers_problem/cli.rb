@@ -8,11 +8,21 @@ class DriversProblem::CLI
     final_output
   end
 
+  # def making_objects
+  #   @data.each do |info|
+  #     if info.length > 2
+  #       DriversProblem::Trips.new(info)
+  #     else
+  #       DriversProblem::Drivers.new(info[1])
+  #     end
+  #   end
+  # end
   def making_objects
     @data.each do |info|
-      if info.length > 2
+      case info[0]
+      when "Trip"
         DriversProblem::Trips.new(info)
-      else
+      when "Driver"
         DriversProblem::Drivers.new(info[1])
       end
     end
@@ -25,7 +35,7 @@ class DriversProblem::CLI
   end
 
   def sort_data
-    @sorted_data = DriversProblem::Drivers.all.sort_by { |driver| driver.trip_distance }.reverse
+    @sorted_data = DriversProblem::Drivers.all.sort_by(&:trip_distance).reverse
   end
 
 end
