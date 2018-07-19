@@ -7,6 +7,7 @@ class DriversProblem::Trips
   def initialize(arg)
     self.find_driver(arg[1])
     @elapsed_time = 0
+    @trip_speed = 0
     # arg[2] ? self.start_time=(arg[2]) : @start_time = 0
     # arg[3] ? self.end_time=(arg[3]) : @end_time = 0
     arg[4] ? self.miles_driven=(arg[4]) : @miles_driven = 0

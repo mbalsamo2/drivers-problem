@@ -15,7 +15,11 @@ class DriversProblem::Drivers
 
   def trip_output
     if self.trip
-      puts "#{self.name}: #{self.trip.miles_driven.to_i} miles @ #{self.trip.trip_speed} mph"
+      if self.trip.trip_speed > 5 && self.trip.trip_speed < 100
+        puts "#{self.name}: #{self.trip.miles_driven.to_i} miles @ #{self.trip.trip_speed} mph"
+      end
+      # self.trip.trip_speed > 5 && self.trip.trip_speed < 100 ? puts "#{self.name}: #{self.trip.miles_driven.to_i} miles @ #{self.trip.trip_speed} mph" : self.trip.delete(self.trip)
+      # puts "#{self.name}: #{self.trip.miles_driven.to_i} miles @ #{self.trip.trip_speed} mph"
     else
       puts "#{self.name}: 0 miles"
     end
