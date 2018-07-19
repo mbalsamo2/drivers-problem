@@ -10,11 +10,7 @@ class DriversProblem::CLI
 
   def making_objects
     @data.each do |info|
-      # if info.length > 2
         @resource = DriversProblem::Trips.new(info)
-      # else
-      #   @resource = DriversProblem::Drivers.new(info)
-      # end
     end
   end
 

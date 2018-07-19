@@ -20,7 +20,6 @@ class DriversProblem::Trips
   def end_time=(data)
     ending = DateTime.parse(data)
     @end_time = ending.hour*60 + ending.min
-    # binding.pry
   end
 
   def miles_driven=(data)
@@ -32,7 +31,6 @@ class DriversProblem::Trips
   end
 
   def trip_speed
-    # binding.pry
     @trip_speed = ((@miles_driven/self.trip_time)*60).round
   end
 
@@ -40,22 +38,4 @@ class DriversProblem::Trips
     @@all
   end
 
-  # def trip_output
-  #   if
-  #     @trip_output = "#{self.driver.name}: #{@miles_driven} miles @ #{@trip_speed} mph"
-  #   end
-  # end
 end
-
-# "Dan 07:15 07:45 17.3"
-# (x miles/y min) * (60min/1hr)
-#
-# a = DateTime.parse("07:15")
-# a_minutes = a.hour*60 + a.min
-#
-# b = DateTime.parse("07:45")
-# b_minutes = b.hour*60 + b.min
-#
-# trip_time = b_minutes - a_minutes
-#
-# speed = (miles/trip_time)*(60)
