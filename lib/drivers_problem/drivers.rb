@@ -1,10 +1,11 @@
 class DriversProblem::Drivers
-  attr_accessor :name, :trip
+  attr_accessor :name, :trip, :trip_distance
 
   @@all = []
 
   def initialize(name)
     @name = name
+    @trip_distance = 0
     @@all << self
   end
 
