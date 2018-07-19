@@ -12,3 +12,7 @@ To run type in terminal:
 ```
 ./bin/drivers_problem
 ```
+```
+cat input.txt | ./bin/drivers_problem
+
+```
