@@ -1,21 +1,5 @@
 require_relative "../config/environment.rb"
 
-# RSpec.configure do |config|
-#   config.order = :default
-#   config.before(:each) do
-#     ["Driver", "Trip"].each do |class_name|
-#       if Kernel.const_defined?(class_name)
-#         klass = Kernel.const_get(class_name)
-#         if klass.respond_to?(:destroy_all)
-#           klass.destroy_all
-#         elsif klass.class_variable_defined?(:@@all) && klass.class_variable_get(:@@all).kind_of?(Array)
-#           klass.class_variable_set(:@@all, [])
-#         end
-#       end
-#     end
-#   end
-# end
-
 RSpec::Matchers.define :include_array do |expected|
   match do |actual|
     actual.any?{|array| match_array(expected).matches?(array)}

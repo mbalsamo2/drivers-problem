@@ -27,7 +27,6 @@ describe "Trip" do
     it "accepts the number of miles driven and converts it from a string to a float" do
       expect(trip.miles_driven).to eq(18.3)
     end
-
   end
 
 end

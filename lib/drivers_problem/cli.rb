@@ -1,8 +1,11 @@
 class DriversProblem::CLI
   attr_accessor :data, :sorted_data
 
-  def call
+  def initialize(path = "../../input.txt")
     @data = STDIN.read.split("\n").map {|line| line.split(" ")}
+  end
+
+  def call
     making_objects
     sort_data
     final_output
