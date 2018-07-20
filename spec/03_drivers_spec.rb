@@ -29,22 +29,4 @@ describe "Driver" do
     end
   end
 
-  describe "@@all" do
-    it "is initialized as an empty array" do
-      all = DriversProblem::Driver.class_variable_get(:@@all)
-
-      expect(all).to match_array([])
-    end
-  end
-
-  describe ".all" do
-    it "returns the class variable @@all" do
-      expect(DriversProblem::Driver.all).to match_array([])
-
-      DriversProblem::Driver.class_variable_set(:@@all, [driver])
-
-      expect(DriversProblem::Driver.all).to match_array([driver])
-    end
-  end
-
 end
