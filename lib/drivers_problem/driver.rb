@@ -1,4 +1,4 @@
-class DriversProblem::Drivers
+class DriversProblem::Driver
   attr_accessor :name, :trip, :trip_distance, :total_time
 
   @@all = []

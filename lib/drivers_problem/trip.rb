@@ -1,4 +1,4 @@
-class DriversProblem::Trips
+class DriversProblem::Trip
   attr_accessor :driver, :elapsed_time
   attr_reader :miles_driven, :trip_time, :trip_speed, :trip_output
 
@@ -22,9 +22,9 @@ class DriversProblem::Trips
   end
 
   def find_driver(arg)
-    @driver = DriversProblem::Drivers.all.detect { |driver| driver.name == arg }
+    @driver = DriversProblem::Driver.all.detect { |driver| driver.name == arg }
 
-    @driver ||= DriversProblem::Drivers.new(arg)
+    @driver ||= DriversProblem::Driver.new(arg)
   end
 
   def miles_driven=(data)

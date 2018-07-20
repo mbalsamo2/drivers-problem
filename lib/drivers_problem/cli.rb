@@ -12,9 +12,9 @@ class DriversProblem::CLI
     @data.each do |info|
       case info[0]
       when "Trip"
-        DriversProblem::Trips.new(info)
+        DriversProblem::Trip.new(info)
       when "Driver"
-        DriversProblem::Drivers.new(info[1])
+        DriversProblem::Driver.new(info[1])
       end
     end
   end
@@ -26,7 +26,7 @@ class DriversProblem::CLI
   end
 
   def sort_data
-    @sorted_data = DriversProblem::Drivers.all.sort_by(&:trip_distance).reverse
+    @sorted_data = DriversProblem::Driver.all.sort_by(&:trip_distance).reverse
   end
 
 end
