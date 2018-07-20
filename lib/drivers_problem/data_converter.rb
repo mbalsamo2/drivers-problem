@@ -1,4 +1,4 @@
-class DriversProblem::CLI
+class DriversProblem::DataConverter
   attr_accessor :data, :sorted_data
 
   def initialize(path = "../../input.txt")

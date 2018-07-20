@@ -3,4 +3,4 @@
 require_relative '../config/environment'
 require_relative '../lib/drivers_problem'
 
-DriversProblem::CLI.new.call
+DriversProblem::DataConverter.new.call
